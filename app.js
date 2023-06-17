@@ -38,6 +38,23 @@ const myMap = {
 	},
 }
 
+//5 markers 
+
+const marker = L.marker([41.892072, -87.626268])
+marker.addTo(map).bindPopup ('<b> Eataly Chicago, IL </b>').openPopup ();
+
+const marker = L.marker([41.891073, -87.630002])
+marker.addTo(map).bindPopup ('<b> RPM Italian Chicago, IL </b>').openPopup ();
+
+const marker = L.marker([41.88913, -87.629936])
+marker.addTo(map).bindPopup ('<b> Siena Tavern Chicago, IL </b>').openPopup ();
+
+const marker = L.marker([41.891459, -87.622488])
+marker.addTo(map).bindPopup ('<b> Volare Chicago, IL </b>').openPopup ();
+
+const marker = L.marker([41.893449,-87.62827])
+marker.addTo(map).bindPopup ('<b> Quartino Chicago, IL </b>').openPopup ();
+
 // get coordinates via geolocation api
 async function getCoords(){
 	const pos = await new Promise((resolve, reject) => {
@@ -94,3 +111,10 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	myMap.businesses = processBusinesses(data)
 	myMap.addMarkers()
 })
+
+//my api key = fsq34EgTMlMdG7Q6kzaHbGu27g9tkNEV6ncdUvgcz5LJ8Nw= 
+
+//my restaurant FETCH request
+
+fetch(`https://cors-anywhere.herokuapp.com/https://api.foursquare.com/v3/places/search?&query=coffee&limit=5&ll=41.8781%2C-87.6298`, options)
+
